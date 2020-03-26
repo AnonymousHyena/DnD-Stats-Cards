@@ -1,0 +1,119 @@
+body {
+	font-size: 16px;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #000;
+}
+.max_height{
+  max-height: 403px;
+  object-fit: contain;
+}
+.radar-chart .area {
+  fill-opacity: 0.7;
+}
+.radar-chart.focus .area {
+  fill-opacity: 0.3;
+}
+.radar-chart.focus .area.focused {
+  fill-opacity: 0.9;
+}
+.area.creature, .creature .circle {
+  fill: #FFD700;
+  stroke: none;
+}
+.legend{
+  font-size: 16px !important;
+}
+img{
+  vertical-align: unset;
+}
+#register{
+  margin-top: 5px;
+}
+.font-weight-bold{
+  font-weight: bold;
+}
+
+/*Header*/
+#header-nav {
+  background-color: #222;
+  border-radius: 0;
+  border: 0;
+}
+
+#logo-img {
+  background: url('../images/logo.png') no-repeat;
+  width: 193px;
+  height: 70px;
+  margin: 10px 0px 10px 0;
+  background-size: 100% 100%;
+}
+
+.navbar-brand {
+  padding-top: 25px;
+}
+.navbar-brand h1 { /*Name*/
+  color: #fff;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-bottom: 0;
+  line-height: .75;
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+#nav-list {
+  margin-top: 15px;
+}
+#nav-list a {
+  width: 81px;
+  color: #fff ;
+  text-align: center;
+}
+#nav-list a:hover {
+  background: #777777;
+}
+#nav-list a span {
+  font-size: 1.6em;
+}
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid #fff ;
+}
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: -55px;
+}
+/*End Header*/
+
+/*Footer*/
+.panel-footer {
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #222;
+  border-top: 0;
+  line-height: .8;
+  font-size: 0.8em;
+}
+.panel-footer section{
+  margin-top: 15px;
+  color: #fff;
+}
+.panel-footer div.row {
+  margin-bottom: 15px;
+}
+/*End Footer*/
+
+
+/*Large devices only*/
+@media (min-width: 1200px) and (max-width:2559px){}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px){}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px){}
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {}

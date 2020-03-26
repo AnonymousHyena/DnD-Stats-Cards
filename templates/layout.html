@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %} - Monster Card</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+	<link rel="stylesheet" href="{{url_for('static',filename='css/radar-chart.min.css')}}">
+	<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+      <nav id="header-nav" class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <a href="/" class="visible-lg visible-md visible-sm visible-xs">
+              <div id="logo-img" alt="Logo image"></div>
+            </a>
+
+            <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+        </div><!-- .container -->
+      </nav><!-- #header-nav -->
+    </header>
+
+    <div id="content" class="container">{% block content %}{% endblock %}</div>
+    
+    <footer class="panel-footer">
+        <div class="container">
+          <!-- <div class="row col-sm-offset-4 col-sm-4">
+            <div class="col-sm-4 text-center footer_link">About</div>
+            <div class="col-sm-4 text-center footer_link">Contact Us</div>
+            <div class="col-sm-4 text-center footer_link">Blog</div>
+          </div>
+          <div class="clearfix"></div> -->
+          <div class="row">
+            <section class="text-center">
+              Made with <span class="glyphicon glyphicon-heart" style="color:red;font-size:0.7em;"></span> by Statics in Thessaloniki
+            </section>
+          </div>
+        </div> 
+      </footer>
+    <div id="footer">
+      {% block footer %}
+      <script type="text/javascript" src="{{url_for('static', filename='js/jquery-2.1.4.min.js')}}"></script>
+      <script type="text/javascript" src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+      <script type="text/javascript" src="{{url_for('static', filename='js/html2canvas.min.js')}}"></script>
+      <script type="text/javascript" src="//d3js.org/d3.v3.js"></script>
+	    <script type="text/javascript" src="{{url_for('static',filename='js/radar-chart.js')}}"></script>
+  	  <script type="text/javascript" src="{{url_for('static',filename='js/script.js')}}"></script>
+      <script type="text/javascript" src="{{url_for('static', filename='js/scripts.js')}}"></script>
+      {% endblock %}
+    </div>
+  </body>
+</html>

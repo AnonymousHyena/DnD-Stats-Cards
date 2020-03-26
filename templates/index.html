@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}{{creature.name}}{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+<form action="" method="post" enctype="multipart/form-data" class="text-center"> 
+	{{form.csrf_token}}
+	<div class="col-sm-12">{{form.mon1(**{"onchange":"this.form.submit()"})}}</div>
+</form>
+<div class="clearfix"></div>
+<div id="register"class="text-center col-sm-12">
+  <a href="{{url_for('.edit',mon=creature.id)}}">Edit {{creature.name}}</a><br>
+	<a href="{{url_for('.new')}}">Register new Species</a>
+</div>
+<div class="clearfix"></div>
+{%if creature%}
+<div id="card">
+  <h1>{{creature.name}} - Monster Card</h1>
+  <img class="col-md-4 max_height" id="creature_image" src="/static/images/{{creature.name}}.jpeg" onclick="draw('{{creature.name}}',{{creature.armor}},{{creature.stamina}},{{creature.skill}},{{[creature.strength,creature.dexterity,creature.constitution,creature.intelligence,creature.wisdom,creature.charisma]}},{{creature.damage}},{{creature.accuracy}})">
+  <div id="chart" class="col-md-4"></div>
+  <div id="chart-two" class="col-md-4"></div>
+  <div class="clearfix"></div>
+  <div class="col-md-12">
+    <span class="font-weight-bold">Vulnerabilities:</span> {{creature.vulnerabilities}} <br>
+    <span class="font-weight-bold">Resistances:</span> {{creature.resistances}} <br>
+    <span class="font-weight-bold">Immunities:</span> {{creature.immunities}} <br>
+    <span class="font-weight-bold">Notes:</span> {{creature.notes}}
+  </div>
+</div>
+{%endif%}
+{% endblock %}

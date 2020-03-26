@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+{% block title %}Register Species{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+{% if not creature %}
+  <h1 class="text-center subh">A new creature has been discovered! Please fill in its details.</h1>
+
+	<form action="" method="post" enctype="multipart/form-data" class="text-center"> 
+		{{form.name(placeholder='Name')}}
+		<h4>Defensive Skill</h4>
+		<div class="stats">
+			{{form.stamina(placeholder='Stamina')}} 
+			{{form.armor(placeholder='Armor')}}
+			{{form.skill(placeholder='Skill')}}
+		</div>
+		<h4>Offensive Skills</h4>
+		<div>
+			{{form.accuracy(placeholder='Accuracy')}}
+			{{form.damage(placeholder='Damage')}}
+		</div>
+		<h4>Physical Skills</h4>
+		<div>
+			{{form.strength(placeholder='Strength')}}
+			{{form.dexterity(placeholder='Dexterity')}}
+			{{form.constitution(placeholder='Constitution')}}
+		</div>
+		<h4>Mental Skills</h4>
+		<div>
+			{{form.intelligence(placeholder='Intelligence')}}
+			{{form.wisdom(placeholder='Wisdom')}}
+			{{form.charisma(placeholder='Charisma')}}
+		</div>
+		<h4>Vulnerabilities</h4>
+		<div>
+			{{form.vulnerabilities(placeholder='None')}}
+		</div>
+		<h4>Resistances</h4>
+		<div>
+			{{form.resistances(placeholder='None')}}
+		</div>
+		<h4>Immunities</h4>
+		<div>
+			{{form.immunities(placeholder='None')}}
+		</div>
+		<div>
+			{{form.notes(placeholder='None')}}
+		</div>
+		<div class="clearfix"></div>
+
+	  	<div class="col-sm-4 col-sm-offset-4">
+	  		{{form.csrf_token}} 
+      		<input class='col-sm-5' type="submit" value="Register Species">
+      		<div class="col-sm-5">
+	    		<a class="col-sm-12" href="{{url_for('.index')}}">
+	      			Back
+	    		</a>
+		  	</div>
+		</div>
+    </form>
+{% else %}
+  <h1 class="text-center subh">New information for a creature has been discovered!</h1>
+
+	<form action="" method="post" enctype="multipart/form-data" class="text-center"> 
+		{{form.name(placeholder='Name',value=creature.name)}}
+		<h4>Defensive Skill</h4>
+		<div class="stats">
+			{{form.stamina(placeholder='Stamina',value=creature.translate('stamina'))}} 
+			{{form.armor(placeholder='Armor',value=creature.translate('armor'))}} 
+			{{form.skill(placeholder='Skill',value=creature.translate('skill'))}}
+		</div>
+		<h4>Offensive Skills</h4>
+		<div>
+			{{form.accuracy(placeholder='Accuracy',value=creature.translate('accuracy'))}}
+			{{form.damage(placeholder='Damage',value=creature.translate('damage'))}}
+		</div>
+		<h4>Physical Skills</h4>
+		<div>
+			{{form.strength(placeholder='Strength',value=creature.translate('strength'))}}
+			{{form.dexterity(placeholder='Dexterity',value=creature.translate('dexterity'))}}
+			{{form.constitution(placeholder='Constitution',value=creature.translate('constitution'))}}
+		</div>
+		<h4>Mental Skills</h4>
+		<div>
+			{{form.intelligence(placeholder='Intelligence',value=creature.translate('intelligence'))}}
+			{{form.wisdom(placeholder='Wisdom',value=creature.translate('wisdom'))}}
+			{{form.charisma(placeholder='Charisma',value=creature.translate('charisma'))}}
+		</div>
+		<h4>Vulnerabilities</h4>
+		<div>
+			{{form.vulnerabilities(placeholder='None',value=creature.vulnerabilities)}}
+		</div>
+		<h4>Resistances</h4>
+		<div>
+			{{form.resistances(placeholder='None',value=creature.resistances)}}
+		</div>
+		<h4>Immunities</h4>
+		<div>
+			{{form.immunities(placeholder='None',value=creature.immunities)}}
+		</div>
+		<div>
+			{{form.notes(placeholder='None',value=creature.notes)}}
+		</div>
+		<div class="clearfix"></div>
+
+	  	<div class="col-sm-4 col-sm-offset-4">
+	  		{{form.csrf_token}} 
+      		<input class='col-sm-5' type="submit" value="Register Species">
+      		<div class="col-sm-5">
+	    		<a class="col-sm-12" href="{{url_for('.index')}}">
+	      			Back
+	    		</a>
+		  	</div>
+		</div>
+    </form>
+{% endif %}
+{% endblock %}
